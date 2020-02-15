@@ -1,5 +1,7 @@
 # OutlineViewDemo
 
+![example](./example.png)
+
 - Basic usage of NSOutlineView
 - Basic usage of WKWebView
 - Different way to pass data between `Controllers`
