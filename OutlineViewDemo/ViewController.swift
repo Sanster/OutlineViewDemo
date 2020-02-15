@@ -14,6 +14,17 @@ class ViewController: NSViewController {
 
     @IBOutlet var outlineView: NSOutlineView!
 
+    @IBAction func doubleClickedItem(_ sender: NSOutlineView) {
+        let item = sender.item(atRow: sender.clickedRow)
+        if item is Feed {
+            if sender.isItemExpanded(item) {
+                sender.collapseItem(item)
+            } else {
+                sender.expandItem(item)
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

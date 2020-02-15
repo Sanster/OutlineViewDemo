@@ -710,16 +710,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOF-9J-tn7">
-                                <rect key="frame" x="0.0" y="0.0" width="915" height="598"/>
+                                <rect key="frame" x="0.0" y="0.0" width="915" height="546"/>
                                 <subviews>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib2-Mh-em0">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="598"/>
-                                        <clipView key="contentView" ambiguous="YES" id="YKs-id-32w">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="598"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="546"/>
+                                        <clipView key="contentView" id="YKs-id-32w">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="546"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <outlineView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="522-vC-z0e" viewBased="YES" indentationPerLevel="5" outlineTableColumn="S9m-pe-dXv" id="dSC-nP-hLV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="573"/>
+                                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="522-vC-z0e" viewBased="YES" indentationPerLevel="5" outlineTableColumn="S9m-pe-dXv" id="dSC-nP-hLV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="521"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -820,6 +820,9 @@
                                                             </prototypeCellViews>
                                                         </tableColumn>
                                                     </tableColumns>
+                                                    <connections>
+                                                        <action trigger="doubleAction" selector="doubleClickedItem:" target="XfG-lQ-9wD" id="Z9u-Cv-88i"/>
+                                                    </connections>
                                                 </outlineView>
                                             </subviews>
                                         </clipView>
@@ -840,7 +843,7 @@
                                         </tableHeaderView>
                                     </scrollView>
                                     <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Xyi-C5-bkz">
-                                        <rect key="frame" x="358" y="0.0" width="557" height="598"/>
+                                        <rect key="frame" x="358" y="0.0" width="557" height="546"/>
                                         <connections>
                                             <segue destination="wYm-Af-jtA" kind="embed" id="PzL-Ro-jCw"/>
                                         </connections>
