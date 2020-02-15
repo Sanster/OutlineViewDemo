@@ -8,6 +8,8 @@
 
 import Cocoa
 
+var notifyKey = "load_data"
+
 class ViewController: NSViewController {
     var feeds = [Feed]()
     let dateFormatter = DateFormatter()
@@ -157,7 +159,10 @@ extension ViewController: NSOutlineViewDelegate {
 
         let selectedIndex = outlineView.selectedRow
         if let feedItem = outlineView.item(atRow: selectedIndex) as? FeedItem {
-            print(feedItem.url)
+            print("click: " + feedItem.url)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: notifyKey),
+                                            object: self,
+                                            userInfo: ["feedItemUrl": feedItem.url])
         }
     }
 }
