@@ -15,12 +15,14 @@ class ViewController: NSViewController {
     @IBOutlet var outlineView: NSOutlineView!
 
     @IBAction func doubleClickedItem(_ sender: NSOutlineView) {
+        let animator = sender.animator() as NSOutlineView
+
         let item = sender.item(atRow: sender.clickedRow)
         if item is Feed {
             if sender.isItemExpanded(item) {
-                sender.collapseItem(item)
+                animator.collapseItem(item)
             } else {
-                sender.expandItem(item)
+                animator.expandItem(item)
             }
         }
     }
