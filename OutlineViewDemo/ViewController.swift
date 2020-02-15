@@ -47,6 +47,44 @@ class ViewController: NSViewController {
             // Update the view, if already loaded.
         }
     }
+
+    override func keyDown(with theEvent: NSEvent) {
+        print("keyDown")
+        interpretKeyEvents([theEvent])
+    }
+
+    override func deleteBackward(_ sender: Any?) {
+        // we must add override keyDown() to make deleteBackward called
+        print("deleteBackward keyDown")
+        let selectedRow = outlineView.selectedRow
+        if selectedRow == -1 {
+            return
+        }
+
+        outlineView.beginUpdates()
+
+        if let item = outlineView.item(atRow: selectedRow) {
+            if let item = item as? Feed {
+                if let index = feeds.firstIndex(where: { $0.name == item.name }) {
+                    feeds.remove(at: index)
+                    outlineView.removeItems(at: IndexSet(integer: selectedRow),
+                                            inParent: nil,
+                                            withAnimation: .slideLeft)
+                }
+            } else if let item = item as? FeedItem {
+                for feed in feeds {
+                    if let index = feed.children.firstIndex(where: { $0.title == item.title }) {
+                        feed.children.remove(at: index)
+                        outlineView.removeItems(at: IndexSet(integer: index),
+                                                inParent: feed,
+                                                withAnimation: .slideLeft)
+                    }
+                }
+            }
+        }
+
+        outlineView.endUpdates()
+    }
 }
 
 extension ViewController: NSOutlineViewDataSource {
