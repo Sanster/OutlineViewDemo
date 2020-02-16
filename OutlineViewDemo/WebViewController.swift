@@ -94,11 +94,18 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate {
         let myURL = URL(string: "http://www.google.com")
         let myRequest = URLRequest(url: myURL!)
         myWebView.load(myRequest)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(load(_:)),
+                                               name: NSNotification.Name(rawValue: notifyKey),
+                                               object: nil)
     }
     
-    func load(_ string: String) {
-        let myURL = URL(string: string)
-        let myRequest = URLRequest(url: myURL!)
-        myWebView.load(myRequest)
+    @objc func load(_ notification: Notification) {
+        if let data = notification.userInfo as? [String: String] {
+            let myURL = URL(string: data["feedItemUrl"]!)
+            let myRequest = URLRequest(url: myURL!)
+            myWebView.load(myRequest)
+        }
     }
 }
