@@ -10,12 +10,20 @@ import Cocoa
 
 var notifyKey = "load_data"
 
+enum PassMethod {
+    case NotificationCenter
+    case Delegation
+}
+
 class ViewController: NSViewController {
     var feeds = [Feed]()
     let dateFormatter = DateFormatter()
+    var passMethod = PassMethod.NotificationCenter
 
     @IBOutlet var outlineView: NSOutlineView!
-
+    @IBOutlet weak var delegationRadioButton: NSButton!
+    @IBOutlet weak var notificationCenterRadioButton: NSButton!
+    
     @IBAction func doubleClickedItem(_ sender: NSOutlineView) {
         let animator = sender.animator() as NSOutlineView
 
@@ -26,6 +34,22 @@ class ViewController: NSViewController {
             } else {
                 animator.expandItem(item)
             }
+        }
+    }
+    
+    @IBAction func radioButtonChanged(_ sender: Any?) {
+        if let button = sender as? NSButton {
+            print("\(button.title) radio button clicked")
+            switch button.title {
+            case "Notification Center":
+                passMethod = .NotificationCenter
+            case "Delegation":
+                passMethod = .Delegation
+            default:
+                passMethod = .NotificationCenter
+            }
+            
+            print("passMethod: \(passMethod)")
         }
     }
 
@@ -42,6 +66,8 @@ class ViewController: NSViewController {
         outlineView.reloadData()
 
         dateFormatter.dateStyle = .short
+        
+        notificationCenterRadioButton.state = .on
     }
 
     override var representedObject: Any? {

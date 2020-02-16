@@ -102,6 +102,7 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate {
     }
     
     @objc func load(_ notification: Notification) {
+        log("notification received")
         if let data = notification.userInfo as? [String: String] {
             let myURL = URL(string: data["feedItemUrl"]!)
             let myRequest = URLRequest(url: myURL!)
