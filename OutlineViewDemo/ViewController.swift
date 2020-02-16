@@ -12,7 +12,7 @@ var notifyKey = "load_data"
 
 enum PassMethod {
     case NotificationCenter
-    case Delegation
+    case AppDelegation
 }
 
 class ViewController: NSViewController {
@@ -21,9 +21,9 @@ class ViewController: NSViewController {
     var passMethod = PassMethod.NotificationCenter
 
     @IBOutlet var outlineView: NSOutlineView!
-    @IBOutlet weak var delegationRadioButton: NSButton!
-    @IBOutlet weak var notificationCenterRadioButton: NSButton!
-    
+    @IBOutlet var delegationRadioButton: NSButton!
+    @IBOutlet var notificationCenterRadioButton: NSButton!
+
     @IBAction func doubleClickedItem(_ sender: NSOutlineView) {
         let animator = sender.animator() as NSOutlineView
 
@@ -36,19 +36,19 @@ class ViewController: NSViewController {
             }
         }
     }
-    
+
     @IBAction func radioButtonChanged(_ sender: Any?) {
         if let button = sender as? NSButton {
             print("\(button.title) radio button clicked")
             switch button.title {
             case "Notification Center":
                 passMethod = .NotificationCenter
-            case "Delegation":
-                passMethod = .Delegation
+            case "AppDelegation":
+                passMethod = .AppDelegation
             default:
                 passMethod = .NotificationCenter
             }
-            
+
             print("passMethod: \(passMethod)")
         }
     }
@@ -66,7 +66,7 @@ class ViewController: NSViewController {
         outlineView.reloadData()
 
         dateFormatter.dateStyle = .short
-        
+
         notificationCenterRadioButton.state = .on
     }
 
@@ -186,9 +186,17 @@ extension ViewController: NSOutlineViewDelegate {
         let selectedIndex = outlineView.selectedRow
         if let feedItem = outlineView.item(atRow: selectedIndex) as? FeedItem {
             print("click: " + feedItem.url)
-            NotificationCenter.default.post(name: Notification.Name(rawValue: notifyKey),
-                                            object: self,
-                                            userInfo: ["feedItemUrl": feedItem.url])
+            switch passMethod {
+            case .NotificationCenter:
+                NotificationCenter.default.post(name: Notification.Name(rawValue: notifyKey),
+                                                object: self,
+                                                userInfo: ["feedItemUrl": feedItem.url])
+            case .AppDelegation:
+                if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+                    print("load by appDelegate.webViewController")
+                    appDelegate.webViewController?.loadByString(feedItem.url)
+                }
+            }
         }
     }
 }

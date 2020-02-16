@@ -729,8 +729,8 @@
                                                     </connections>
                                                 </button>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O4j-uE-VU0">
-                                                    <rect key="frame" x="165" y="12" width="88" height="18"/>
-                                                    <buttonCell key="cell" type="radio" title="Delegation" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="sHh-MT-DeE">
+                                                    <rect key="frame" x="165" y="12" width="112" height="18"/>
+                                                    <buttonCell key="cell" type="radio" title="AppDelegation" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="sHh-MT-DeE">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>

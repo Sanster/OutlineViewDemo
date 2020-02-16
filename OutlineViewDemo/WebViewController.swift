@@ -99,14 +99,21 @@ class WebViewController: NSViewController, WKUIDelegate, WKNavigationDelegate {
                                                selector: #selector(load(_:)),
                                                name: NSNotification.Name(rawValue: notifyKey),
                                                object: nil)
+        
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.webViewController = self
     }
     
     @objc func load(_ notification: Notification) {
         log("notification received")
         if let data = notification.userInfo as? [String: String] {
-            let myURL = URL(string: data["feedItemUrl"]!)
-            let myRequest = URLRequest(url: myURL!)
-            myWebView.load(myRequest)
+            self.loadByString(data["feedItemUrl"]!)
         }
+    }
+    
+    func loadByString(_ string: String) {
+        let myURL = URL(string: string)
+        let myRequest = URLRequest(url: myURL!)
+        myWebView.load(myRequest)
     }
 }
