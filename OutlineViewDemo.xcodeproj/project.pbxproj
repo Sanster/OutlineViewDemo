@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800BE7D623FD7015007FC1E0 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 800BE7D523FD7015007FC1E0 /* Preferences */; };
+		800BE7D823FD7385007FC1E0 /* PreferencesStyle+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BE7D723FD7385007FC1E0 /* PreferencesStyle+UserDefaults.swift */; };
+		800BE7DA23FD748F007FC1E0 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BE7D923FD748F007FC1E0 /* GeneralPreferenceViewController.swift */; };
+		800BE7DC23FD7605007FC1E0 /* GeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800BE7DB23FD7605007FC1E0 /* GeneralPreferenceViewController.xib */; };
 		8014A22D23F6961C00996C44 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014A22C23F6961C00996C44 /* WebViewController.swift */; };
 		80A42D9C23F43636009EE3FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A42D9B23F43636009EE3FC /* AppDelegate.swift */; };
 		80A42D9E23F43636009EE3FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A42D9D23F43636009EE3FC /* ViewController.swift */; };
@@ -18,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		800BE7D723FD7385007FC1E0 /* PreferencesStyle+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreferencesStyle+UserDefaults.swift"; sourceTree = "<group>"; };
+		800BE7D923FD748F007FC1E0 /* GeneralPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferenceViewController.swift; sourceTree = "<group>"; };
+		800BE7DB23FD7605007FC1E0 /* GeneralPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralPreferenceViewController.xib; sourceTree = "<group>"; };
 		8014A22C23F6961C00996C44 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		80A42D9823F43635009EE3FC /* OutlineViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutlineViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A42D9B23F43636009EE3FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800BE7D623FD7015007FC1E0 /* Preferences in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +79,9 @@
 				80A42DAD23F43A52009EE3FC /* Feed.swift */,
 				80A42DAF23F43A8A009EE3FC /* FeedItem.swift */,
 				8014A22C23F6961C00996C44 /* WebViewController.swift */,
+				800BE7D723FD7385007FC1E0 /* PreferencesStyle+UserDefaults.swift */,
+				800BE7D923FD748F007FC1E0 /* GeneralPreferenceViewController.swift */,
+				800BE7DB23FD7605007FC1E0 /* GeneralPreferenceViewController.xib */,
 			);
 			path = OutlineViewDemo;
 			sourceTree = "<group>";
@@ -91,6 +102,9 @@
 			dependencies = (
 			);
 			name = OutlineViewDemo;
+			packageProductDependencies = (
+				800BE7D523FD7015007FC1E0 /* Preferences */,
+			);
 			productName = OutlineViewDemo;
 			productReference = 80A42D9823F43635009EE3FC /* OutlineViewDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +133,9 @@
 				Base,
 			);
 			mainGroup = 80A42D8F23F43635009EE3FC;
+			packageReferences = (
+				800BE7D423FD7015007FC1E0 /* XCRemoteSwiftPackageReference "Preferences" */,
+			);
 			productRefGroup = 80A42D9923F43635009EE3FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -133,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800BE7DC23FD7605007FC1E0 /* GeneralPreferenceViewController.xib in Resources */,
 				80A42DA023F43637009EE3FC /* Assets.xcassets in Resources */,
 				80A42DA323F43637009EE3FC /* Main.storyboard in Resources */,
 				80A42DAC23F4367F009EE3FC /* Feeds.plist in Resources */,
@@ -146,7 +164,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800BE7DA23FD748F007FC1E0 /* GeneralPreferenceViewController.swift in Sources */,
 				80A42DB023F43A8A009EE3FC /* FeedItem.swift in Sources */,
+				800BE7D823FD7385007FC1E0 /* PreferencesStyle+UserDefaults.swift in Sources */,
 				80A42D9E23F43636009EE3FC /* ViewController.swift in Sources */,
 				80A42DAE23F43A52009EE3FC /* Feed.swift in Sources */,
 				8014A22D23F6961C00996C44 /* WebViewController.swift in Sources */,
@@ -339,6 +359,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		800BE7D423FD7015007FC1E0 /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		800BE7D523FD7015007FC1E0 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 800BE7D423FD7015007FC1E0 /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 80A42D9023F43635009EE3FC /* Project object */;
 }

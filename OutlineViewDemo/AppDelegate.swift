@@ -7,10 +7,39 @@
 //
 
 import Cocoa
+import Preferences
+
+extension PreferencePane.Identifier {
+    static let general = Identifier("general")
+//    static let advanced = Identifier("advanced")
+}
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, GeneralPaneDelegate {
     var webViewController: WebViewController?
+
+    var preferencesStyle: PreferencesStyle {
+        get { PreferencesStyle.preferencesStyleFromUserDefaults() }
+        set {
+            newValue.storeInUserDefaults()
+        }
+    }
+
+    lazy var preferences: [PreferencePane] = [
+        GeneralPreferenceViewController()
+    ]
+
+    lazy var preferencesWindowController: PreferencesWindowController = {
+        let out = PreferencesWindowController(
+            preferencePanes: preferences,
+            style: preferencesStyle,
+            animated: true,
+            hidesToolbarForSingleItem: true
+        )
+        let genPane = preferences[0] as! GeneralPreferenceViewController
+        genPane.delegate = self
+        return out
+    }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -23,4 +52,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     } // end func
+
+    @IBAction private func preferencesMenuItemActionHandler(_ sender: NSMenuItem) {
+        preferencesWindowController.show()
+    }
+
+    func relunchPreference() {
+        preferencesWindowController.close()
+
+        preferencesStyle = preferencesStyle == .segmentedControl
+            ? .toolbarItems
+            : .segmentedControl
+
+        preferencesWindowController = PreferencesWindowController(
+            preferencePanes: preferences,
+            style: preferencesStyle,
+            animated: true,
+            hidesToolbarForSingleItem: true
+        )
+
+        preferencesWindowController.show()
+    }
 }
