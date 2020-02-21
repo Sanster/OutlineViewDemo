@@ -11,7 +11,7 @@ import Preferences
 
 extension PreferencePane.Identifier {
     static let general = Identifier("general")
-//    static let advanced = Identifier("advanced")
+    static let advanced = Identifier("advanced")
 }
 
 @NSApplicationMain
@@ -26,7 +26,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, GeneralPaneDelegate {
     }
 
     lazy var preferences: [PreferencePane] = [
-        GeneralPreferenceViewController()
+        GeneralPreferenceViewController(),
+        AdvancedPreferenceViewController()
     ]
 
     lazy var preferencesWindowController: PreferencesWindowController = {
@@ -58,6 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, GeneralPaneDelegate {
     }
 
     func relunchPreference() {
+        print("In relunchPreference")
         preferencesWindowController.close()
 
         preferencesStyle = preferencesStyle == .segmentedControl

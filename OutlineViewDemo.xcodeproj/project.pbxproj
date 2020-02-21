@@ -12,6 +12,8 @@
 		800BE7DA23FD748F007FC1E0 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BE7D923FD748F007FC1E0 /* GeneralPreferenceViewController.swift */; };
 		800BE7DC23FD7605007FC1E0 /* GeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800BE7DB23FD7605007FC1E0 /* GeneralPreferenceViewController.xib */; };
 		8014A22D23F6961C00996C44 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014A22C23F6961C00996C44 /* WebViewController.swift */; };
+		804BBBC723FFD2A800F97797 /* AdvancedPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BBBC623FFD2A800F97797 /* AdvancedPreferenceViewController.swift */; };
+		804BBBC923FFD2E800F97797 /* AdvancedPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804BBBC823FFD2E800F97797 /* AdvancedPreferenceViewController.xib */; };
 		80A42D9C23F43636009EE3FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A42D9B23F43636009EE3FC /* AppDelegate.swift */; };
 		80A42D9E23F43636009EE3FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A42D9D23F43636009EE3FC /* ViewController.swift */; };
 		80A42DA023F43637009EE3FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A42D9F23F43637009EE3FC /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		800BE7D923FD748F007FC1E0 /* GeneralPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferenceViewController.swift; sourceTree = "<group>"; };
 		800BE7DB23FD7605007FC1E0 /* GeneralPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralPreferenceViewController.xib; sourceTree = "<group>"; };
 		8014A22C23F6961C00996C44 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		804BBBC623FFD2A800F97797 /* AdvancedPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPreferenceViewController.swift; sourceTree = "<group>"; };
+		804BBBC823FFD2E800F97797 /* AdvancedPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvancedPreferenceViewController.xib; sourceTree = "<group>"; };
 		80A42D9823F43635009EE3FC /* OutlineViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutlineViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A42D9B23F43636009EE3FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80A42D9D23F43636009EE3FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				8014A22C23F6961C00996C44 /* WebViewController.swift */,
 				800BE7D723FD7385007FC1E0 /* PreferencesStyle+UserDefaults.swift */,
 				800BE7D923FD748F007FC1E0 /* GeneralPreferenceViewController.swift */,
+				804BBBC623FFD2A800F97797 /* AdvancedPreferenceViewController.swift */,
+				804BBBC823FFD2E800F97797 /* AdvancedPreferenceViewController.xib */,
 				800BE7DB23FD7605007FC1E0 /* GeneralPreferenceViewController.xib */,
 			);
 			path = OutlineViewDemo;
@@ -153,6 +159,7 @@
 				800BE7DC23FD7605007FC1E0 /* GeneralPreferenceViewController.xib in Resources */,
 				80A42DA023F43637009EE3FC /* Assets.xcassets in Resources */,
 				80A42DA323F43637009EE3FC /* Main.storyboard in Resources */,
+				804BBBC923FFD2E800F97797 /* AdvancedPreferenceViewController.xib in Resources */,
 				80A42DAC23F4367F009EE3FC /* Feeds.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,6 +176,7 @@
 				800BE7D823FD7385007FC1E0 /* PreferencesStyle+UserDefaults.swift in Sources */,
 				80A42D9E23F43636009EE3FC /* ViewController.swift in Sources */,
 				80A42DAE23F43A52009EE3FC /* Feed.swift in Sources */,
+				804BBBC723FFD2A800F97797 /* AdvancedPreferenceViewController.swift in Sources */,
 				8014A22D23F6961C00996C44 /* WebViewController.swift in Sources */,
 				80A42D9C23F43636009EE3FC /* AppDelegate.swift in Sources */,
 			);
